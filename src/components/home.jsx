@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ShoppingCart, Search, ArrowRight, Star, ShieldCheck, Truck, Headphones, Heart,
+  ShoppingCart,
+  Search,
+  ArrowRight,
+  Star,
+  ShieldCheck,
+  Truck,
+  Headphones,
+  Heart,
 } from "lucide-react";
 import { products, categories, money } from "../data/products";
 
@@ -9,18 +16,19 @@ export default function HomePage({ addToCart, search, setSearch }) {
   const [category, setCategory] = useState("All");
   const [favorites, setFavorites] = useState([]);
 
-  const visibleProducts = products.filter((p) => {
-    const matchesCategory = category === "All" || p.category === category;
-    const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase());
+  const visibleProducts = products.filter((product) => {
+    const matchesCategory = category === "All" || product.category === category;
+    const matchesSearch = product.name.toLowerCase().includes(search.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
   const toggleFavorite = (id) =>
-    setFavorites((cur) => (cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id]));
+    setFavorites((current) =>
+      current.includes(id) ? current.filter((item) => item !== id) : [...current, id],
+    );
 
   return (
-    <main>
-      {/* Hero */}
+    <main className="bg-slate-50">
       <section className="mx-auto grid max-w-7xl gap-8 px-5 py-8 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-12">
         <div className="rounded-3xl bg-blue-50 px-6 py-10 sm:px-10 sm:py-14">
           <span className="inline-flex rounded-full border border-blue-200 bg-white px-4 py-2 text-xs font-bold tracking-wider text-blue-700">
@@ -59,7 +67,6 @@ export default function HomePage({ addToCart, search, setSearch }) {
         </div>
       </section>
 
-      {/* Benefits */}
       <section className="mx-auto max-w-7xl px-5 py-8 lg:px-8">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {[
@@ -78,7 +85,6 @@ export default function HomePage({ addToCart, search, setSearch }) {
         </div>
       </section>
 
-      {/* Products */}
       <section id="products" className="mx-auto max-w-7xl scroll-mt-28 px-5 py-10 lg:px-8">
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
@@ -101,6 +107,7 @@ export default function HomePage({ addToCart, search, setSearch }) {
           {categories.map((item) => (
             <button
               key={item}
+              type="button"
               onClick={() => setCategory(item)}
               className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition ${
                 category === item
@@ -128,6 +135,7 @@ export default function HomePage({ addToCart, search, setSearch }) {
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                   <button
+                    type="button"
                     onClick={() => toggleFavorite(product.id)}
                     aria-label="Toggle favorite"
                     className="absolute right-3 top-3 rounded-full bg-white p-2.5 text-slate-600 shadow-sm hover:text-red-500"
@@ -146,6 +154,7 @@ export default function HomePage({ addToCart, search, setSearch }) {
                   <div className="mt-4 flex items-center justify-between gap-2">
                     <strong className="text-lg text-blue-950">{money(product.price)}</strong>
                     <button
+                      type="button"
                       onClick={() => addToCart(product)}
                       aria-label={`Add ${product.name} to cart`}
                       className="rounded-xl bg-blue-50 p-3 text-blue-700 transition hover:bg-blue-600 hover:text-white"
@@ -164,7 +173,6 @@ export default function HomePage({ addToCart, search, setSearch }) {
         )}
       </section>
 
-      {/* Call to action */}
       <section className="mx-auto max-w-7xl px-5 py-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-6 rounded-3xl bg-blue-950 p-8 text-white sm:flex-row sm:items-center sm:p-12">
           <div>
@@ -172,7 +180,10 @@ export default function HomePage({ addToCart, search, setSearch }) {
             <h2 className="mt-3 text-3xl font-black">Ready to start shopping?</h2>
             <p className="mt-3 text-sm leading-6 text-blue-100/75">Create an account to get started with Shop Rwanda.</p>
           </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/emilien
           <Link
             to="/register"
             className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-6 py-4 font-bold text-blue-950 transition hover:bg-blue-100"
@@ -181,6 +192,7 @@ export default function HomePage({ addToCart, search, setSearch }) {
           </Link>
         </div>
       </section>
+<<<<<<< HEAD
     </main>
     
           <div className="promo-cart">
@@ -199,13 +211,23 @@ export default function HomePage({ addToCart, search, setSearch }) {
           </div>
         </section>
       </main>
+=======
+>>>>>>> refs/remotes/origin/emilien
 
-      <footer className="shop">
-        <a href="/" className="shop-logo">
-          Shop<span>Rwanda</span>
-        </a>
-        <p>© {new Date().getFullYear()} Shop Rwanda. All rights reserved.</p>
+      <footer className="border-t border-slate-200 bg-white">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-6 text-sm text-slate-500 sm:flex-row lg:px-8">
+          <a href="/" className="font-black text-blue-950">
+            Shop<span className="text-blue-600">Rwanda</span>
+          </a>
+          <p>© {new Date().getFullYear()} Shop Rwanda. All rights reserved.</p>
+        </div>
       </footer>
+<<<<<<< HEAD
     </div>
 
 }
+=======
+    </main>
+  );
+}
+>>>>>>> refs/remotes/origin/emilien
