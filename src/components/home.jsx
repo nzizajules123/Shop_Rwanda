@@ -215,7 +215,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="shop-footer">
+      <footer className="shop">
         <a href="/" className="shop-logo">
           Shop<span>Rwanda</span>
         </a>
