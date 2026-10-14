@@ -180,10 +180,7 @@ export default function HomePage({ addToCart, search, setSearch }) {
             <h2 className="mt-3 text-3xl font-black">Ready to start shopping?</h2>
             <p className="mt-3 text-sm leading-6 text-blue-100/75">Create an account to get started with Shop Rwanda.</p>
           </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/remotes/origin/emilien
           <Link
             to="/register"
             className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-6 py-4 font-bold text-blue-950 transition hover:bg-blue-100"
@@ -192,27 +189,6 @@ export default function HomePage({ addToCart, search, setSearch }) {
           </Link>
         </div>
       </section>
-<<<<<<< HEAD
-    </main>
-    
-          <div className="promo-cart">
-            <span>Items in your cart</span>
-            <strong>{cart.length}</strong>
-            <span>
-              {formatPrice(
-                cart.reduce((total, id) => {
-                  const product = products.find(
-                    (item) => item.id === id
-                  );
-                  return total + (product ? product.price : 0);
-                }, 0)
-              )}
-            </span>
-          </div>
-        </section>
-      </main>
-=======
->>>>>>> refs/remotes/origin/emilien
 
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-6 text-sm text-slate-500 sm:flex-row lg:px-8">
@@ -222,8 +198,6 @@ export default function HomePage({ addToCart, search, setSearch }) {
           <p>© {new Date().getFullYear()} Shop Rwanda. All rights reserved.</p>
         </div>
       </footer>
-
     </main>
   );
 }
->>>>>>> refs/remotes/origin/emilien
