@@ -222,11 +222,7 @@ export default function HomePage({ addToCart, search, setSearch }) {
           <p>© {new Date().getFullYear()} Shop Rwanda. All rights reserved.</p>
         </div>
       </footer>
-<<<<<<< HEAD
-    </div>
 
-}
-=======
     </main>
   );
 }
