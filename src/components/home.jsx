@@ -172,7 +172,7 @@ export default function HomePage({ addToCart, search, setSearch }) {
             <h2 className="mt-3 text-3xl font-black">Ready to start shopping?</h2>
             <p className="mt-3 text-sm leading-6 text-blue-100/75">Create an account to get started with Shop Rwanda.</p>
           </div>
-<<<<<<< HEAD
+
           <Link
             to="/register"
             className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-6 py-4 font-bold text-blue-950 transition hover:bg-blue-100"
@@ -182,7 +182,7 @@ export default function HomePage({ addToCart, search, setSearch }) {
         </div>
       </section>
     </main>
-=======
+    
           <div className="promo-cart">
             <span>Items in your cart</span>
             <strong>{cart.length}</strong>
@@ -207,6 +207,5 @@ export default function HomePage({ addToCart, search, setSearch }) {
         <p>© {new Date().getFullYear()} Shop Rwanda. All rights reserved.</p>
       </footer>
     </div>
->>>>>>> f3f7e341a88def310a3a1e8e0570f7d21679b1c0
-  );
+
 }
